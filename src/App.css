@@ -1,0 +1,783 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Manrope", sans-serif;
+}
+
+/* =========================================================
+   MAIN BACKGROUND
+   ONLY SKY BLUE
+========================================================= */
+
+.page {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+   background: #9fcbd2;
+}
+
+.intro-stage {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: introStageIn 0.8s ease both;
+}
+
+@keyframes introStageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* White card */
+
+.intro-card {
+  width: 210px;
+  height: 210px;
+
+  padding: 15px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 22px 45px rgba(47, 93, 99, 0.16),
+    0 5px 12px rgba(47, 93, 99, 0.08);
+
+  overflow: visible;
+}
+
+.intro-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter: drop-shadow(
+    0 8px 9px rgba(45, 76, 79, 0.18)
+  );
+}
+
+/* Ring */
+
+.ring-card {
+  transform: rotate(-2deg);
+}
+
+/* Necklace */
+
+.necklace-card {
+  transform: rotate(2deg);
+}
+
+/* =========================================================
+   2. COLLECTION
+   NO WHITE CARD
+   ONLY TRANSPARENT GLASS
+========================================================= */
+
+.collection-stage {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: collectionStageIn 0.9s ease both;
+}
+
+@keyframes collectionStageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   COLLECTION TITLE
+========================================================= */
+
+.collection-title {
+  position: absolute;
+
+  top: 20%;
+
+  z-index: 20;
+
+  text-align: center;
+
+ color: #000000;
+}
+
+.collection-title span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+    color: #111111;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+
+}
+
+.collection-title h1 {
+  font-family: "DM Serif Display", serif;
+
+  font-size: clamp(29px, 3vw, 42px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.5px;
+ color: #000000;
+  text-shadow:
+    0 1px 0 #ffffff,
+    0 2px 3px rgba(0, 0, 0, 0.25);
+  }
+
+/* =========================================================
+   7 PRODUCTS
+========================================================= */
+
+.collection-products {
+  position: relative;
+
+  width: 900px;
+  height: 220px;
+
+  max-width: 95vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   TRANSPARENT COLLECTION CARD
+========================================================= */
+
+.collection-card {
+  position: absolute;
+
+  width: 135px;
+  height: 135px;
+
+  padding: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*
+    IMPORTANT:
+    NO WHITE BACKGROUND
+  */
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 9px;
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  box-shadow:
+    0 10px 20px rgba(40, 91, 98, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+  animation: collectionCardIn 0.75s ease both;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter: drop-shadow(
+    0 7px 8px rgba(39, 72, 75, 0.17)
+  );
+}
+
+/* =========================================================
+   7 CARD POSITIONS
+========================================================= */
+
+.collection-card-1 {
+  transform:
+    translateX(-375px)
+    rotate(-17deg);
+
+  z-index: 1;
+
+  animation-delay: 0.05s;
+}
+
+.collection-card-2 {
+  transform:
+    translateX(-250px)
+    rotate(-9deg);
+
+  z-index: 2;
+
+  animation-delay: 0.12s;
+}
+
+.collection-card-3 {
+  transform:
+    translateX(-125px)
+    rotate(-4deg);
+
+  z-index: 3;
+
+  animation-delay: 0.19s;
+}
+
+.collection-card-4 {
+  transform:
+    translateX(0)
+    rotate(0deg);
+
+  z-index: 7;
+
+  animation-delay: 0.26s;
+}
+
+.collection-card-5 {
+  transform:
+    translateX(125px)
+    rotate(4deg);
+
+  z-index: 4;
+
+  animation-delay: 0.33s;
+}
+
+.collection-card-6 {
+  transform:
+    translateX(250px)
+    rotate(9deg);
+
+  z-index: 3;
+
+  animation-delay: 0.4s;
+}
+
+.collection-card-7 {
+  transform:
+    translateX(375px)
+    rotate(17deg);
+
+  z-index: 2;
+
+  animation-delay: 0.47s;
+}
+
+/* =========================================================
+   COLLECTION ANIMATION
+========================================================= */
+
+@keyframes collectionCardIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px)
+      scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   COLLECTION BOTTOM TEXT
+========================================================= */
+
+.collection-bottom-text {
+  position: absolute;
+
+  bottom: 28%;
+
+  font-size: 5px;
+
+  letter-spacing: 1.4px;
+
+  color: rgba(47, 72, 75, 0.5);
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   3. INDIVIDUAL PRODUCT
+   WHITE CARD ONLY
+========================================================= */
+
+.individual-stage {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: individualStageIn 0.8s ease both;
+}
+
+@keyframes individualStageIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   INDIVIDUAL LAYOUT
+========================================================= */
+
+.individual-product {
+  width: 650px;
+  max-width: 90vw;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.8fr;
+
+  align-items: center;
+
+  gap: 55px;
+}
+
+/* =========================================================
+   WHITE IMAGE CARD
+========================================================= */
+
+.individual-image-card {
+  position: relative;
+
+  width: 270px;
+  height: 270px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 9px;
+
+  box-shadow:
+    0 20px 40px rgba(42, 88, 95, 0.16);
+
+  z-index: 3;
+}
+
+.individual-image-card img {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 14px;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter: drop-shadow(
+    0 8px 9px rgba(45, 76, 79, 0.17)
+  );
+
+  transition: transform 0.4s ease;
+}
+
+.individual-image-card:hover img {
+  transform: scale(1.04);
+}
+.individual-info span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #111111;
+  opacity: 1;
+}
+/* =========================================================
+   STACKED WHITE CARDS
+========================================================= */
+
+.back-card {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background: #f7f9f9;
+
+  border-radius: 9px;
+
+  z-index: -1;
+
+  box-shadow:
+    0 10px 20px rgba(45, 85, 90, 0.08);
+}
+
+.back-card-one {
+  transform:
+    translate(10px, 7px)
+    rotate(3deg);
+}
+
+.back-card-two {
+  transform:
+    translate(19px, 13px)
+    rotate(6deg);
+}
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.individual-info {
+  text-align: center;
+
+  padding: 10px;
+}
+
+.individual-info span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  color: #506d70;
+}
+
+.individual-info h1 {
+  margin: 0 0 10px;
+
+  font-family: "DM Serif Display", serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  color: #263c3f;
+}
+
+.individual-price {
+  margin-bottom: 18px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #405b5e;
+}
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+.individual-info button {
+  border: none;
+
+  min-width: 95px;
+
+  padding: 7px 15px;
+
+  border-radius: 2px;
+
+  background: #263c3f;
+
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.individual-info button:hover {
+  transform: translateY(-2px);
+
+  background: #3b5b5e;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .collection-products {
+    width: 800px;
+  }
+
+  .collection-card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .collection-card-1 {
+    transform: translateX(-320px) rotate(-16deg);
+  }
+
+  .collection-card-2 {
+    transform: translateX(-213px) rotate(-9deg);
+  }
+
+  .collection-card-3 {
+    transform: translateX(-106px) rotate(-4deg);
+  }
+
+  .collection-card-5 {
+    transform: translateX(106px) rotate(4deg);
+  }
+
+  .collection-card-6 {
+    transform: translateX(213px) rotate(9deg);
+  }
+
+  .collection-card-7 {
+    transform: translateX(320px) rotate(16deg);
+  }
+
+  .individual-product {
+    width: 580px;
+
+    gap: 35px;
+  }
+
+  .individual-image-card {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .collection-title {
+    top: 17%;
+  }
+
+  .collection-title h1 {
+    font-size: 27px;
+  }
+
+  .collection-products {
+    width: 100%;
+  }
+
+  .collection-card {
+    width: 82px;
+    height: 82px;
+  }
+
+  .collection-card-1 {
+    transform: translateX(-205px) rotate(-17deg);
+  }
+
+  .collection-card-2 {
+    transform: translateX(-137px) rotate(-9deg);
+  }
+
+  .collection-card-3 {
+    transform: translateX(-68px) rotate(-4deg);
+  }
+
+  .collection-card-4 {
+    transform: translateX(0) rotate(0);
+  }
+
+  .collection-card-5 {
+    transform: translateX(68px) rotate(4deg);
+  }
+
+  .collection-card-6 {
+    transform: translateX(137px) rotate(9deg);
+  }
+
+  .collection-card-7 {
+    transform: translateX(205px) rotate(17deg);
+  }
+
+  .individual-product {
+    width: 94vw;
+
+    grid-template-columns: 1fr 0.85fr;
+
+    gap: 15px;
+  }
+
+  .individual-image-card {
+    width: 190px;
+    height: 190px;
+  }
+
+  .individual-info h1 {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .intro-card {
+    width: 180px;
+    height: 180px;
+  }
+
+  .collection-card {
+    width: 65px;
+    height: 65px;
+  }
+
+  .collection-card-1 {
+    transform: translateX(-165px) rotate(-17deg);
+  }
+
+  .collection-card-2 {
+    transform: translateX(-110px) rotate(-9deg);
+  }
+
+  .collection-card-3 {
+    transform: translateX(-55px) rotate(-4deg);
+  }
+
+  .collection-card-5 {
+    transform: translateX(55px) rotate(4deg);
+  }
+
+  .collection-card-6 {
+    transform: translateX(110px) rotate(9deg);
+  }
+
+  .collection-card-7 {
+    transform: translateX(165px) rotate(17deg);
+  }
+
+  .individual-product {
+    width: 94vw;
+
+    gap: 5px;
+  }
+
+  .individual-image-card {
+    width: 155px;
+    height: 155px;
+  }
+
+  .individual-info h1 {
+    font-size: 19px;
+  }
+
+  .individual-info span {
+    font-size: 6px;
+  }
+
+  .individual-price {
+    font-size: 10px;
+  }
+
+  .individual-info button {
+    min-width: 85px;
+
+    padding: 6px 10px;
+
+    font-size: 6px;
+  }
+}
