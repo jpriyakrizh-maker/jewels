@@ -41,82 +41,6 @@ body {
    background: #9fcbd2;
 }
 
-.intro-stage {
-  position: relative;
-  z-index: 10;
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  animation: introStageIn 0.8s ease both;
-}
-
-@keyframes introStageIn {
-  from {
-    opacity: 0;
-    transform: scale(0.88);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* White card */
-
-.intro-card {
-  width: 210px;
-  height: 210px;
-
-  padding: 15px;
-
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #ffffff;
-
-  border-radius: 10px;
-
-  box-shadow:
-    0 22px 45px rgba(47, 93, 99, 0.16),
-    0 5px 12px rgba(47, 93, 99, 0.08);
-
-  overflow: visible;
-}
-
-.intro-card img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  display: block;
-
-  filter: drop-shadow(
-    0 8px 9px rgba(45, 76, 79, 0.18)
-  );
-}
-
-/* Ring */
-
-.ring-card {
-  transform: rotate(-2deg);
-}
-
-/* Necklace */
-
-.necklace-card {
-  transform: rotate(2deg);
-}
-
 /* =========================================================
    2. COLLECTION
    NO WHITE CARD
@@ -223,6 +147,9 @@ body {
   height: 135px;
 
   padding: 7px;
+   transition:
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 
   display: flex;
   align-items: center;
@@ -247,6 +174,16 @@ body {
     inset 0 1px 1px rgba(255, 255, 255, 0.12);
 
   animation: collectionCardIn 0.75s ease both;
+   transition:
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+.collection-card:hover {
+  box-shadow:
+    0 14px 28px rgba(40, 91, 98, 0.20),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+  filter: brightness(1.05);
 }
 
 .collection-card img {
@@ -362,11 +299,11 @@ body {
 
   bottom: 28%;
 
-  font-size: 5px;
+  font-size: 8px;
 
   letter-spacing: 1.4px;
 
-  color: rgba(47, 72, 75, 0.5);
+  color: #000000;
 
   text-transform: uppercase;
 }
@@ -470,10 +407,10 @@ body {
 .individual-info span {
   display: block;
   margin-bottom: 10px;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: #111111;
+  color: #000000;
   opacity: 1;
 }
 /* =========================================================
@@ -546,14 +483,11 @@ body {
 
 .individual-price {
   margin-bottom: 18px;
-
   font-size: 12px;
-
-  font-weight: 600;
-
-  color: #405b5e;
+  font-weight: 800;
+  color: #000000;
+  opacity: 1;
 }
-
 /* =========================================================
    ADD TO CART
 ========================================================= */
@@ -716,11 +650,6 @@ body {
 
 @media (max-width: 500px) {
 
-  .intro-card {
-    width: 180px;
-    height: 180px;
-  }
-
   .collection-card {
     width: 65px;
     height: 65px;
@@ -780,4 +709,35 @@ body {
 
     font-size: 6px;
   }
+}
+.collection-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.collection-card-1:hover {
+  transform: translateX(-375px) rotate(-17deg) scale(1.05);
+}
+
+.collection-card-2:hover {
+  transform: translateX(-250px) rotate(-9deg) scale(1.05);
+}
+
+.collection-card-3:hover {
+  transform: translateX(-125px) rotate(-4deg) scale(1.05);
+}
+
+.collection-card-4:hover {
+  transform: translateX(0) rotate(0deg) scale(1.05);
+}
+
+.collection-card-5:hover {
+  transform: translateX(125px) rotate(4deg) scale(1.05);
+}
+
+.collection-card-6:hover {
+  transform: translateX(250px) rotate(9deg) scale(1.05);
+}
+
+.collection-card-7:hover {
+  transform: translateX(375px) rotate(17deg) scale(1.05);
 }

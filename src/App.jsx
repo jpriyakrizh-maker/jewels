@@ -2,77 +2,58 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 const products = [
-  {
-    name: "Golden Ring",
-    price: "15,000",
-    image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Elegant Necklace",
-    price: "18,900",
-    image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Classic Bracelet",
-    price: "14,900",
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Diamond Earrings",
-    price: "19,900",
-    image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Diamond Pendant",
-    price: "1,50,000",
-    image:
-      "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Gold Chain",
-    price: "1,20,000",
-    image:
-      "https://images.unsplash.com/photo-1601821765780-754fa98637c1?auto=format&fit=crop&w=900&q=90",
-  },
-  {
-    name: "Gold Bangle",
-    price: "24,900",
-    image:
-      "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=90",
-  },
+{
+  name: "Golden Ring",
+  price: "15,000",
+  image:
+    "https://img.tatacliq.com/images/i25//437Wx649H/MP000000027435853_437Wx649H_202507191354081.jpeg",
+},
+{
+  name: "Elegant Necklace",
+  price: "18,900",
+  image:
+    "https://annachy-prod-assets.annachy.com/pims/products-v1/0142941GRE18INC_2-image1_v1787231249962.webp"},
+{
+  name: "Classic Bracelet",
+  price: "14,900",
+  image:
+    "https://assets.myntassets.com/w_412,q_50,,dpr_3,fl_progressive,f_webp/assets/images/2026/MAY/17/FFnHrfaF_e730ecc251224a7fa698e9ba7a0c6436.jpg"},
+{
+  name: "Diamond Earrings",
+  price: "19,900",
+  image:
+    "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=90",
+},
+{
+  name: "Diamond Pendant",
+  price: "1,50,000",
+  image:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjr6jFwS2xLhGqfCNeYmrkdBWXupgvng2SowRG6J60T4O9qB14C0HKgtPl&s=10"
+},
+{
+  name: "Gold Earrings",
+  price: "24,900",
+  image:
+    "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=90",
+},
+{
+  name: "Gold Bangle",
+  price: "24,900",
+  image:
+    "https://www.avsajewels.com/cdn/shop/files/ChatGPT_Image_Jun_30_2026_10_01_59_PM.png?v=1782837136"
+}
 ];
-
 function App() {
-
-  const [stage, setStage] = useState("ring");
+  // FIRST SCREEN = WHOLE COLLECTION
+  const [stage, setStage] = useState("collection");
   const [productIndex, setProductIndex] = useState(0);
 
   useEffect(() => {
     let timer;
 
-    /* ---------------- RING ---------------- */
-
-    if (stage === "ring") {
-      timer = setTimeout(() => {
-        setStage("necklace");
-      }, 2500);
-    }
-
-    /* ---------------- NECKLACE ---------------- */
-
-    else if (stage === "necklace") {
-      timer = setTimeout(() => {
-        setStage("collection");
-      }, 2500);
-    }
-
     /* ---------------- WHOLE 7 PRODUCTS ---------------- */
 
-    else if (stage === "collection") {
+    if (stage === "collection") {
       timer = setTimeout(() => {
         setProductIndex(0);
         setStage("product");
@@ -87,7 +68,7 @@ function App() {
           setProductIndex((prev) => prev + 1);
         } else {
           setProductIndex(0);
-          setStage("ring");
+          setStage("collection");
         }
       }, 3000);
     }
@@ -99,41 +80,8 @@ function App() {
     <main className="page">
 
       {/* =================================================
-          1. RING ONLY
-      ================================================= */}
-
-      {stage === "ring" && (
-        <section className="intro-stage">
-
-          <div className="intro-card ring-card">
-            <img
-              src={products[0].image}
-              alt={products[0].name}
-            />
-          </div>
-
-        </section>
-      )}
-
-      {/* =================================================
-          2. NECKLACE ONLY
-      ================================================= */}
-
-      {stage === "necklace" && (
-        <section className="intro-stage">
-
-          <div className="intro-card necklace-card">
-            <img
-              src={products[1].image}
-              alt={products[1].name}
-            />
-          </div>
-
-        </section>
-      )}
-
-      {/* =================================================
-          3. WHOLE 7 PRODUCT COLLECTION
+          1. WHOLE 7 PRODUCT COLLECTION
+          FIRST SCREEN
       ================================================= */}
 
       {stage === "collection" && (
@@ -168,15 +116,13 @@ function App() {
       )}
 
       {/* =================================================
-          4. INDIVIDUAL PRODUCT
+          2. INDIVIDUAL PRODUCT
       ================================================= */}
 
       {stage === "product" && (
         <section className="individual-stage">
 
           <div className="individual-product">
-
-            {/* WHITE CARD ONLY HERE */}
 
             <div className="individual-image-card">
 
